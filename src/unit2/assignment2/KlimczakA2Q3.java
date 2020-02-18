@@ -13,9 +13,9 @@ public class KlimczakA2Q3 {
 	 * ICS4U0
 	 */
 
-	Scanner m_input = new Scanner(System.in);
+	static Scanner m_input = new Scanner(System.in);
 
-	double m_a, m_b, m_c, m_determinant, m_root1, m_root2;
+	static double m_a, m_b, m_c, m_determinant, m_root1, m_root2;
 
 	public static void main(String[] args) {
 		//intro
@@ -29,10 +29,10 @@ public class KlimczakA2Q3 {
 		System.out.print("Enter A Value For C: ");
 		m_c = ScannerUtils.readDouble(m_input);
 
-		m_determinant = Math.sqrt(Math.pow(b, 2) - 4 * m_a * m_c);
+		m_determinant = Math.sqrt(Math.pow(m_b, 2) - 4 * m_a * m_c);
 		
-		m_root1 = (-m_b + m_determinant) / (4 * m_a * m_c);
-		m_root2 = (-m_b - m_determinant) / (4 * m_a * m_c);
+		m_root1 = (-m_b + m_determinant) / (2 * m_a);
+		m_root2 = (-m_b - m_determinant) / (2 * m_a);
 
 		if (Double.isNaN(m_determinant)) {
 			//0 roots
