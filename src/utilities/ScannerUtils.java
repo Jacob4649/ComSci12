@@ -16,6 +16,25 @@ public class ScannerUtils {
 	 * @param input the scanner to read from
 	 * @return the value read
 	 */
+	public static long readLong(Scanner input) {
+		long l = 0;
+		try {
+			l = input.nextLong();
+			input.nextLine();
+		} catch (InputMismatchException e) {
+			System.out.println("Invalid Input");
+			input.nextLine();
+			l = readLong(input);
+		}
+		return l;
+	}
+	
+	/**
+	 * Reads input from a scanner, then clears buffer
+	 * Prints "Invalid Input" on InputMismatchException
+	 * @param input the scanner to read from
+	 * @return the value read
+	 */
 	public static int readInt(Scanner input) {
 		int i = 0;
 		try {
